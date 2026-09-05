@@ -611,9 +611,9 @@
   background:
     linear-gradient(
       180deg,
-      rgba(10, 10, 10, 0.2) 0%,
-      rgba(10, 10, 10, 0.35) 45%,
-      rgba(10, 10, 10, 0.72) 100%
+      rgba(10, 10, 10, 0.05) 0%,
+      rgba(10, 10, 10, 0.12) 50%,
+      rgba(10, 10, 10, 0.48) 100%
     );
   pointer-events: none;
 }
@@ -631,13 +631,26 @@
   max-width: 16ch;
   font-size: clamp(2.6rem, 6vw, 4.8rem);
   color: var(--ivory);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+.team-hero__eyebrow {
+  color: var(--ivory);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.85),
+    0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.team-hero__eyebrow::after {
+  background: var(--ivory);
 }
 
 .team-hero__content p {
   max-width: 34rem;
   margin-top: 0.85rem;
   font-size: 1.05rem;
-  color: rgba(244, 239, 230, 0.88);
+  color: rgba(244, 239, 230, 0.95);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 @media (min-width: 961px) {
@@ -670,9 +683,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(10, 10, 10, 0.08) 0%,
-        rgba(10, 10, 10, 0.2) 55%,
-        rgba(10, 10, 10, 0.68) 100%
+        rgba(10, 10, 10, 0.02) 0%,
+        rgba(10, 10, 10, 0.08) 55%,
+        rgba(10, 10, 10, 0.42) 100%
       );
   }
 
@@ -716,13 +729,38 @@
       linear-gradient(
         180deg,
         rgba(10, 10, 10, 0.12) 0%,
-        rgba(10, 10, 10, 0.28) 50%,
-        rgba(10, 10, 10, 0.7) 100%
+        rgba(10, 10, 10, 0.2) 40%,
+        rgba(10, 10, 10, 0.72) 100%
       );
   }
 
   .team-hero__content {
-    padding: 0 1.25rem 2.5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1.25rem 2.25rem;
+    background: transparent;
+  }
+
+  .team-hero__eyebrow {
+    color: var(--ivory);
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.9),
+      0 2px 16px rgba(0, 0, 0, 0.75);
+  }
+
+  .team-hero__eyebrow::after {
+    background: var(--ivory);
+  }
+
+  .team-hero__content h1 {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+  }
+
+  .team-hero__content p {
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
   }
 }
 

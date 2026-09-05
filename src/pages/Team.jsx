@@ -19,13 +19,11 @@ export default function Team() {
             />
           </div>
           <div className="container team-hero__content">
-            <p className="eyebrow" style={{ color: 'var(--gold-soft)' }}>
-              The Team
-            </p>
+            <p className="eyebrow team-hero__eyebrow">The Team</p>
             <h1>Style starts here.</h1>
             <p>
               Barbers, stylists, and educators dedicated to the craft — for men
-              and women.
+              and women. Book your appointment today.
             </p>
           </div>
         </div>

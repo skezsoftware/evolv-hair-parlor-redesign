@@ -109,7 +109,9 @@ export default function Navbar() {
             {link.label}
           </NavLink>
         ))}
-        <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
+        <Button to={salon.primaryCta.to} onClick={() => setOpen(false)}>
+          {salon.primaryCta.label}
+        </Button>
       </nav>
     </header>
   )

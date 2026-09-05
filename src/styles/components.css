@@ -641,6 +641,16 @@
   object-position: center top;
 }
 
+.page-hero--contact .page-hero__media img {
+  object-position: center 48%;
+}
+
+@media (max-width: 960px) {
+  .page-hero--contact .page-hero__media img {
+    object-position: center 42%;
+  }
+}
+
 .page-hero--community {
   min-height: 0;
   display: block;

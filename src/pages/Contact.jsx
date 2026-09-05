@@ -13,9 +13,9 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        className="page-hero--anchor-top"
+        className="page-hero--anchor-top page-hero--contact"
         image={salon.images.detail}
-        objectPosition="center top"
+        objectPosition="center 48%"
         eyebrow="Contact"
         title="Ready to book?"
         subtitle="Call the parlor to schedule, or reach out to your preferred stylist on the Team page."
