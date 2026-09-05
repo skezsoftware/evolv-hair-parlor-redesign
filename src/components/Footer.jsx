@@ -8,7 +8,15 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container-wide footer-grid">
         <div>
-          <p className="footer-brand">{salon.name}</p>
+          <Link to="/" className="footer-brand" aria-label={`${salon.name} home`}>
+            <img
+              className="footer-brand__logo"
+              src={salon.images.logoLight}
+              alt={salon.name}
+              width={220}
+              height={94}
+            />
+          </Link>
           <p className="footer-tagline">{salon.tagline}</p>
         </div>
 

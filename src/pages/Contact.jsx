@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { salon } from '../data/salon'
 import { usePageTitle } from '../hooks/usePageTitle'
 import Button from '../components/Button'
-import ContactForm from '../components/ContactForm'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 
@@ -14,60 +13,49 @@ export default function Contact() {
   return (
     <>
       <PageHero
+        className="page-hero--anchor-top"
         image={salon.images.detail}
+        objectPosition="center top"
         eyebrow="Contact"
         title="Ready to book?"
-        subtitle="Schedule an appointment by phone, or send a message below."
+        subtitle="Call the parlor to schedule, or reach out to your preferred stylist on the Team page."
       />
 
       <section className="section">
-        <div className="container contact-layout">
-          <div className="contact-details">
-            <SectionHeading eyebrow="Visit" title="Find us in Hillcrest." />
+        <div className="container contact-details contact-details--solo">
+          <SectionHeading eyebrow="Visit" title="Find us in Hillcrest." />
 
-            <div>
-              <h2>Address</h2>
-              <p>
-                <a href={salon.address.mapsUrl} target="_blank" rel="noreferrer">
-                  {salon.address.street}
-                  <br />
-                  {salon.address.city}, {salon.address.state} {salon.address.zip}
-                </a>
-              </p>
-            </div>
-
-            <div>
-              <h2>Phone</h2>
-              <p>
-                <a href={salon.phone.href}>{salon.phone.display}</a>
-              </p>
-            </div>
-
-            <div>
-              <h2>Hours</h2>
-              <ul className="hours-panel">
-                {salon.hours.map((item) => (
-                  <li key={item.days}>
-                    <span>{item.days}</span>
-                    <span>{item.time}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+          <div>
+            <h2>Address</h2>
+            <p>
+              <a href={salon.address.mapsUrl} target="_blank" rel="noreferrer">
+                {salon.address.street}
+                <br />
+                {salon.address.city}, {salon.address.state} {salon.address.zip}
+              </a>
+            </p>
           </div>
 
           <div>
-            <SectionHeading
-              eyebrow="Write"
-              title="Send a message."
-              subtitle="Already a client? Let us know how we’re doing."
-            />
-            <div style={{ marginTop: '1.5rem' }}>
-              <ContactForm />
-            </div>
+            <h2>Phone</h2>
+            <p>
+              <a href={salon.phone.href}>{salon.phone.display}</a>
+            </p>
           </div>
+
+          <div>
+            <h2>Hours</h2>
+            <ul className="hours-panel">
+              {salon.hours.map((item) => (
+                <li key={item.days}>
+                  <span>{item.days}</span>
+                  <span>{item.time}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
         </div>
       </section>
 

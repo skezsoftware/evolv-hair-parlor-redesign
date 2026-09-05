@@ -53,10 +53,20 @@ export default function Navbar() {
           aria-label={`${salon.name} home`}
           onClick={() => setOpen(false)}
         >
-          <span className="brand__name">{salon.shortName}</span>
-          <span className="brand__place">
-            {salon.neighborhood} · {salon.address.city}
-          </span>
+          <img
+            className="brand__logo brand__logo--dark"
+            src={salon.images.logo}
+            alt=""
+            width={185}
+            height={79}
+          />
+          <img
+            className="brand__logo brand__logo--light"
+            src={salon.images.logoLight}
+            alt=""
+            width={185}
+            height={79}
+          />
         </Link>
 
         <nav className="nav-links" aria-label="Primary">
@@ -68,7 +78,7 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-cta">
-          <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+          <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
           <button
             className="menu-toggle"
             type="button"
@@ -99,7 +109,7 @@ export default function Navbar() {
             {link.label}
           </NavLink>
         ))}
-        <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+        <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
       </nav>
     </header>
   )

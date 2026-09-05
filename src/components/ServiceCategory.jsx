@@ -1,5 +1,3 @@
-import { formatPrice } from '../data/salon'
-
 export default function ServiceCategory({ category }) {
   return (
     <section
@@ -13,7 +11,6 @@ export default function ServiceCategory({ category }) {
         {category.items.map((item) => (
           <li className="menu-item" key={item.name}>
             <h3>{item.name}</h3>
-            <span className="menu-item__price">{formatPrice(item.price)}</span>
             {item.description ? <p>{item.description}</p> : null}
           </li>
         ))}

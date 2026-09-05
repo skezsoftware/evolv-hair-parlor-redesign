@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import { formatPrice, getImage, salon } from '../data/salon'
+import { getImage, salon } from '../data/salon'
 import { usePageTitle } from '../hooks/usePageTitle'
 import Button from '../components/Button'
 import SafeImage from '../components/SafeImage'
@@ -21,7 +21,7 @@ export default function Home() {
           <h1>{salon.name}</h1>
           <p className="home-hero__tagline">{salon.tagline}</p>
           <div className="btn-group">
-            <Button href={salon.primaryCta.href} variant="primary">
+            <Button to={salon.primaryCta.to} variant="primary">
               {salon.primaryCta.label}
             </Button>
             <Button to="/services" variant="light">
@@ -50,8 +50,8 @@ export default function Home() {
           </div>
           <div className="intro-media">
             <SafeImage
-              src={salon.images.salonInterior}
-              alt="Interior of Êvolv Hair Parlor"
+              src={salon.images.storefront}
+              alt="Êvolv Hair Parlor storefront on University Avenue"
               hover
             />
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
             align="center"
             eyebrow="Services"
             title="Cuts, color, and classic barbering."
-            subtitle="Life isn’t perfect, but your hair can be."
+            subtitle="A hybrid parlor for men and women — explore the full menu for every service we offer."
           />
           <div className="featured-grid">
             {salon.featuredServices.map((item) => (
@@ -73,10 +73,14 @@ export default function Home() {
                 <div>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
-                  <span>{formatPrice(item.price)}</span>
                 </div>
               </article>
             ))}
+          </div>
+          <div className="btn-group" style={{ justifyContent: 'center', marginTop: '2.5rem' }}>
+            <Button to="/services" variant="secondary">
+              View All Services
+            </Button>
           </div>
         </div>
       </section>
@@ -85,7 +89,7 @@ export default function Home() {
         <div className="container split">
           <div className="split-media">
             <SafeImage
-              src={salon.images.chair}
+              src={salon.images.barberStation}
               alt="Salon chair and brick interior at Êvolv"
               hover
             />
@@ -106,13 +110,13 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+            <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
           </div>
         </div>
       </section>
 
       <section className="private-promo">
-        <SafeImage src={salon.images.brick} alt="" />
+        <SafeImage src={salon.images.teamAtWork} alt="" />
         <div className="container private-promo__content">
           <p className="eyebrow">The Team</p>
           <h2>Style starts here.</h2>
@@ -148,26 +152,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--alt">
-        <div className="container hours-grid">
-          <div className="hours-panel">
-            <SectionHeading eyebrow="Hours" title="Open seven days a week." />
-            <ul>
-              {salon.hours.map((item) => (
-                <li key={item.days}>
-                  <span>{item.days}</span>
-                  <span>{item.time}</span>
-                </li>
-              ))}
-            </ul>
+      <section className="section">
+        <div className="container split">
+          <div className="split-media">
+            <SafeImage
+              src={getImage(salon.neighborhoodSpotlight.imageKey)}
+              alt="Hillcrest neighborhood sign in San Diego"
+              hover
+            />
           </div>
-          <div className="location-panel">
-            <SectionHeading eyebrow="Location" title="On University Avenue." />
-            <p style={{ color: 'var(--text-muted)' }}>{salon.address.full}</p>
-            <p>
-              <a href={salon.phone.href}>{salon.phone.display}</a>
+          <div>
+            <SectionHeading
+              eyebrow={salon.neighborhoodSpotlight.eyebrow}
+              title={salon.neighborhoodSpotlight.title}
+              subtitle={salon.neighborhoodSpotlight.text}
+            />
+            <p className="notes" style={{ marginTop: '1.4rem' }}>
+              {salon.address.full}
             </p>
-            <div className="btn-group" style={{ marginTop: '1.2rem' }}>
+            <div className="btn-group" style={{ marginTop: '1.6rem' }}>
               <Button href={salon.address.mapsUrl} variant="secondary">
                 Get Directions
               </Button>
@@ -176,6 +179,20 @@ export default function Home() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container hours-panel" style={{ maxWidth: '36rem' }}>
+          <SectionHeading eyebrow="Hours" title="Open seven days a week." />
+          <ul>
+            {salon.hours.map((item) => (
+              <li key={item.days}>
+                <span>{item.days}</span>
+                <span>{item.time}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -188,7 +205,7 @@ export default function Home() {
             subtitle="Call to make an appointment. Walk-ins welcome when the schedule allows."
           />
           <div className="btn-group" style={{ justifyContent: 'center' }}>
-            <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+            <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
             <Button to="/services" variant="light">
               View Services
             </Button>

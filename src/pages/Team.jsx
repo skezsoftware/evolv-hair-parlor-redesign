@@ -1,7 +1,6 @@
 import { getImage, salon } from '../data/salon'
 import { usePageTitle } from '../hooks/usePageTitle'
 import Button from '../components/Button'
-import PageHero from '../components/PageHero'
 import SafeImage from '../components/SafeImage'
 import SectionHeading from '../components/SectionHeading'
 
@@ -10,12 +9,27 @@ export default function Team() {
 
   return (
     <>
-      <PageHero
-        image={salon.images.cut}
-        eyebrow="The Team"
-        title="Style starts here."
-        subtitle="Barbers, stylists, and educators dedicated to the craft — for men and women."
-      />
+      <section className="team-hero">
+        <div className="team-hero__frame">
+          <div className="team-hero__media" aria-hidden="true">
+            <SafeImage
+              src={salon.images.teamGroup}
+              alt=""
+              priority
+            />
+          </div>
+          <div className="container team-hero__content">
+            <p className="eyebrow" style={{ color: 'var(--gold-soft)' }}>
+              The Team
+            </p>
+            <h1>Style starts here.</h1>
+            <p>
+              Barbers, stylists, and educators dedicated to the craft — for men
+              and women.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container">
@@ -23,7 +37,7 @@ export default function Team() {
             align="center"
             eyebrow="Stylists"
             title="Meet the Êvolv team."
-            subtitle="Book directly with your stylist, or call the parlor to find the right fit."
+            subtitle="Find your stylist below — or call the parlor and we’ll help you book."
           />
           <div className="team-grid">
             {salon.team.map((member) => (
@@ -37,9 +51,33 @@ export default function Team() {
                   <h3>{member.name}</h3>
                   <p className="team-card__role">{member.role}</p>
                   <p>{member.bio}</p>
-                  <a className="team-card__phone" href={member.phoneHref}>
-                    {member.phone}
-                  </a>
+                  <div className="team-card__links">
+                    {member.phoneHref ? (
+                      <a className="team-card__phone" href={member.phoneHref}>
+                        {member.phone}
+                      </a>
+                    ) : null}
+                    {member.booksyUrl ? (
+                      <a
+                        className="team-card__phone"
+                        href={member.booksyUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Book on Booksy
+                      </a>
+                    ) : null}
+                    {member.instagramUrl ? (
+                      <a
+                        className="team-card__phone"
+                        href={member.instagramUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Book on Instagram {member.instagram}
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </article>
             ))}
@@ -52,11 +90,11 @@ export default function Team() {
           <SectionHeading
             align="center"
             eyebrow="Book"
-            title="Ready to sit in the chair?"
-            subtitle="Call the parlor or reach out to your preferred stylist."
+            title="Call Êvolv Hair Parlor."
+            subtitle={`Reach us at ${salon.phone.display} — or book directly with your stylist above.`}
           />
           <div className="btn-group" style={{ justifyContent: 'center' }}>
-            <Button href={salon.primaryCta.href}>{salon.primaryCta.label}</Button>
+            <Button href={salon.phone.href}>Call {salon.phone.display}</Button>
             <Button to="/contact" variant="light">
               Contact
             </Button>

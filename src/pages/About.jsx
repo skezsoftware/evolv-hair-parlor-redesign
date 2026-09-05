@@ -11,7 +11,9 @@ export default function About() {
   return (
     <>
       <PageHero
-        image={salon.images.brick}
+        className="page-hero--anchor-top"
+        image={salon.images.teamAtWork}
+        objectPosition="center top"
         eyebrow={about.eyebrow}
         title={about.title}
         subtitle={about.lead}
@@ -37,8 +39,8 @@ export default function About() {
 
       <div className="image-band">
         <SafeImage
-          src={salon.images.salonInterior}
-          alt="Êvolv Hair Parlor salon interior"
+          src={salon.images.storyTools}
+          alt="Gold and black salon tools arranged on a dark surface"
         />
       </div>
 
@@ -62,6 +64,18 @@ export default function About() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            {founder.booksyUrl ? (
+              <p className="team-card__links" style={{ marginTop: '1.5rem' }}>
+                <a
+                  className="team-card__phone"
+                  href={founder.booksyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Book Mario on Booksy
+                </a>
+              </p>
+            ) : null}
           </div>
         </div>
       </section>
@@ -96,7 +110,7 @@ export default function About() {
           <div className="split-media">
             <SafeImage
               src={salon.images.chair}
-              alt="Brick and black-and-white salon interior"
+              alt="Lounge seating area at Êvolv Hair Parlor"
               hover
             />
           </div>

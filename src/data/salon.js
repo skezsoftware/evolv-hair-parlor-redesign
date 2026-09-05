@@ -48,7 +48,7 @@ export const salon = {
 
   primaryCta: {
     label: 'Book Now',
-    href: 'tel:+16192912887',
+    to: '/team',
   },
 
   colors: {
@@ -60,18 +60,44 @@ export const salon = {
   },
 
   images: {
-    hero: unsplash('photo-1560066984-138dadb4c035', 2200),
-    salonInterior: unsplash('photo-1522337660859-02fbefca4702', 1800),
-    chair: unsplash('photo-1585747860715-2ba37e788b70', 1600),
-    cut: unsplash('photo-1605497788044-5a32c7078486', 1400),
-    color: unsplash('photo-1562322140-8baeececf3df', 1400),
-    tools: unsplash('photo-1622286342621-4bd786c2447c', 1400),
-    barber: unsplash('photo-1503951914875-452162b0f3f1', 1400),
-    style: unsplash('photo-1516975080664-ed2fc6a32937', 1400),
-    blowdry: unsplash('photo-1487412947147-5cebf100ffc2', 1400),
-    portrait: unsplash('photo-1519699047748-de8e457a634e', 1400),
-    brick: unsplash('photo-1469334031218-e382a71b716b', 1800),
-    detail: unsplash('photo-1522337660859-02fbefca4702', 1600),
+    hero: '/images/salon/interior-front.jpg',
+    salonInterior: '',
+    chair: '/images/salon/lounge-seating-area.webp',
+    storyTools: '/images/salon/story_image.jpg',
+    cut: '/images/salon/barber-at-work.jpg',
+    color: '/images/salon/yellow-hair-color.webp',
+    tools: '/images/salon/barn-door.jpg',
+    barber: '/images/salon/barber-at-work.jpg',
+    style: '/images/salon/team.jpg',
+    blowdry: '/images/salon/barber-at-work.jpg',
+    portrait: '/images/salon/team.jpg',
+    brick: '/images/salon/storefront.jpg',
+    detail: '/images/salon/interior-front.jpg',
+    storefront: '/images/salon/storefront.jpg',
+    interiorFront: '/images/salon/interior-front.jpg',
+    teamGroup: '/images/salon/team.jpg',
+    barberStation: '/images/salon/barber-station-chair.webp',
+    teamAtWork: '/images/salon/evolv-team-at-work.webp',
+    community: '/images/salon/community-hero.jpg',
+    communityMobile: '/images/salon/community-hero-mobile.jpg',
+    shawn: '/images/team/shawn-gray.png',
+    mario: '/images/team/mario-garcia.png',
+    oscar: '/images/team/oscar-gomez.png',
+    fernando: '/images/team/fernando-sanchez.png',
+    jesse: '/images/team/jesse-estrella.png',
+    marlon: '/images/team/marlon-franco-lagos.png',
+    mimi: '/images/team/mimi-luv.png',
+    izzy: '/images/clients/izzy.jpg',
+    logo: '/images/logo.png',
+    logoLight: '/images/logo-light.png',
+    hillcrestSign: '/images/hillcrest-sign.jpg',
+  },
+
+  neighborhoodSpotlight: {
+    eyebrow: 'Hillcrest',
+    title: 'Located in the heart of Hillcrest.',
+    text: 'Been serving the San Diego and Hillcrest community for almost two decades.',
+    imageKey: 'hillcrestSign',
   },
 
   about: {
@@ -116,7 +142,9 @@ export const salon = {
   founder: {
     name: 'Mario Garcia',
     title: 'Founder · Barber & Cosmetologist',
-    imageKey: 'barber',
+    imageKey: 'mario',
+    booksyUrl:
+      'https://booksy.com/en-us/dl/show-business/87091?utm_medium=c2c_referral',
     bio: [
       'Mario started cutting hair at 11 in Tijuana and holds licenses in both barbering and cosmetology. He teaches at a private beauty college and works as a platform artist for Hair Evolution Professionals.',
       'He opened Êvolv Hair Parlor in Hillcrest in 2016 to share a simple belief: a haircut should be an experience — precise, personal, and worth coming back for.',
@@ -129,53 +157,85 @@ export const salon = {
       role: 'Barber, Cosmetologist, Founder',
       phone: '(619) 200-9777',
       phoneHref: 'tel:+16192009777',
-      imageKey: 'barber',
-      bio: 'Founder of Êvolv. Dual-licensed artist, educator, and platform artist for Hair Evolution Professionals.',
-    },
-    {
-      name: 'Shawn Gray',
-      role: 'Barber',
-      phone: '(442) 226-8247',
-      phoneHref: 'tel:+14422268247',
-      imageKey: 'cut',
-      bio: 'Precision cuts, fades, and classic barbering with a clean, modern finish.',
+      imageKey: 'mario',
+      booksyUrl:
+        'https://booksy.com/en-us/dl/show-business/87091?utm_medium=c2c_referral',
+      bio: 'Founder of Êvolv. Dual-licensed artist, educator, and platform artist for Hair Evolution Professionals. Call (619) 200-9777.',
     },
     {
       name: 'Fernando Sanchez',
       role: 'Barber',
       phone: '(619) 653-0622',
       phoneHref: 'tel:+16196530622',
-      imageKey: 'tools',
-      bio: 'Sharp fades, clean lineups, and tailored cuts for every style.',
+      imageKey: 'fernando',
+      booksyUrl:
+        'https://booksy.com/en-us/dl/show-business/158317?utm_medium=c2c_referral',
+      bio: 'Sharp fades, clean lineups, and tailored cuts for every style. Call (619) 653-0622.',
+    },
+    {
+      name: 'Jesse Estrella',
+      role: 'Stylist',
+      phone: '(619) 291-2887',
+      phoneHref: 'tel:+16192912887',
+      imageKey: 'jesse',
+      instagram: '@j3s5e',
+      instagramUrl: 'https://www.instagram.com/j3s5e/',
+      bio: 'Cuts and color with a loyal following — consistent results and a style that lasts. Book on Instagram @j3s5e or call (619) 291-2887.',
+    },
+    {
+      name: 'Marlon Franco Lagos',
+      role: 'Stylist',
+      imageKey: 'marlon',
+      instagram: '@bybob_styles',
+      instagramUrl: 'https://www.instagram.com/bybob_styles/',
+      bio: 'Book through Instagram for cuts and color — message @bybob_styles to schedule.',
+    },
+    {
+      name: 'Mimi Luv',
+      role: 'Stylist',
+      phone: '(619) 291-2887',
+      phoneHref: 'tel:+16192912887',
+      imageKey: 'mimi',
+      bio: 'Creative cuts and color with a personal touch — ask for Mimi when you book. Call (619) 291-2887.',
     },
     {
       name: 'Oscar Gomez',
-      role: 'Barber / Cosmetologist / Educator',
+      role: 'Barber/Cosmetologist/Educator',
       phone: '(619) 379-7562',
       phoneHref: 'tel:+16193797562',
-      imageKey: 'style',
-      bio: 'Hybrid stylist and educator focused on refined cuts and lasting results.',
+      imageKey: 'oscar',
+      bio: 'Hybrid stylist and educator focused on refined cuts and lasting results. Call (619) 379-7562.',
+    },
+    {
+      name: 'Shawn Gray',
+      role: 'Barber',
+      phone: '(442) 226-8247',
+      phoneHref: 'tel:+14422268247',
+      imageKey: 'shawn',
+      booksyUrl:
+        'https://booksy.com/en-us/dl/show-business/19979?utm_medium=c2c_referral',
+      bio: 'Precision cuts, fades, and classic barbering with a clean, modern finish. Call (442) 226-8247.',
     },
   ],
 
   featuredServices: [
     {
-      name: 'Short Haircut',
-      description: 'Clean, tailored cut with shampoo and style.',
-      price: 40,
+      name: 'Cuts & Styling',
+      description:
+        'From classic fades to longer looks — tailored cuts and finishes for men and women.',
       imageKey: 'cut',
     },
     {
-      name: 'Color Service',
-      description: 'Custom color work priced to the look and length.',
-      price: '60+',
+      name: 'Color & Texture',
+      description:
+        'Custom color, highlights, and treatments shaped around your hair and the look you want.',
       imageKey: 'color',
     },
     {
-      name: 'Shave Treatment',
-      description: 'Hot towel shave and finish for a sharp, polished result.',
-      price: 35,
-      imageKey: 'tools',
+      name: 'Barbering & Care',
+      description:
+        'Shaves, lineups, and finishing work — the details that keep every visit sharp.',
+      imageKey: 'izzy',
     },
   ],
 
@@ -213,7 +273,7 @@ export const salon = {
   ],
 
   servicesDisclaimer:
-    'Prices vary by stylist, length, and complexity. Please contact us with questions about services not listed below. Appointments recommended.',
+    'Please contact us with questions about services not listed below. Appointments recommended.',
 
   services: [
     {
@@ -290,12 +350,28 @@ export const salon = {
 
   mapEmbedUrl:
     'https://www.openstreetmap.org/export/embed.html?bbox=-117.162%2C32.744%2C-117.146%2C32.754&layer=mapnik&marker=32.749%2C-117.154',
+
+  /**
+   * Client Spotlight — put the newest feature first.
+   * To add one: drop a photo in public/images/clients/, then add an entry below.
+   * Use `image` for a local path (e.g. '/images/clients/name.jpg') or `imageKey` for an existing salon.images key.
+   */
+  spotlights: [
+    {
+      name: 'Joe Smith',
+      month: 'September 2026',
+      image: '/images/clients/joe-smith.jpg',
+      summary:
+        'A familiar face in the chair at Êvolv — clean fade, confident presence, and the kind of regular who makes Hillcrest feel like home. Proud to feature Joe in this month’s client spotlight.',
+    },
+  ],
 }
 
 export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'Team', path: '/team' },
+  { label: 'Spotlight', path: '/spotlight' },
   { label: 'Our Story', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
@@ -324,4 +400,9 @@ export function formatPrice(price) {
 
 export function getImage(imageKey) {
   return salon.images[imageKey] ?? ''
+}
+
+export function getSpotlightImage(entry) {
+  if (entry?.image) return entry.image
+  return getImage(entry?.imageKey)
 }

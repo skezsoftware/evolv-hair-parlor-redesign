@@ -15,7 +15,7 @@ export default function NotFound() {
       </p>
       <div className="btn-group" style={{ justifyContent: 'center' }}>
         <Button to="/">Back Home</Button>
-        <Button href={salon.primaryCta.href} variant="secondary">
+        <Button to={salon.primaryCta.to} variant="secondary">
           {salon.primaryCta.label}
         </Button>
       </div>
