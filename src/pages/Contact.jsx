@@ -34,6 +34,11 @@ export default function Contact() {
                 {salon.address.city}, {salon.address.state} {salon.address.zip}
               </a>
             </p>
+            <p style={{ marginTop: '1rem' }}>
+              <Button href={salon.address.mapsUrl} variant="secondary">
+                Get Directions
+              </Button>
+            </p>
           </div>
 
           <div>
@@ -55,7 +60,12 @@ export default function Contact() {
             </ul>
           </div>
 
-          <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
+          <div className="btn-group">
+            <Button to={salon.primaryCta.to}>{salon.primaryCta.label}</Button>
+            <Button href={salon.phone.href} variant="secondary">
+              Call {salon.phone.display}
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -66,6 +76,9 @@ export default function Contact() {
             <p className="notes">
               In the heart of Hillcrest — easy to reach, easy to return to.
             </p>
+            <div className="btn-group" style={{ marginTop: '1.25rem' }}>
+              <Button href={salon.address.mapsUrl}>Get Directions</Button>
+            </div>
             <div className="map-placeholder" style={{ marginTop: '1.5rem' }}>
               {mapFailed ? (
                 <div className="map-fallback">
@@ -73,7 +86,7 @@ export default function Contact() {
                   <p>{salon.address.full}</p>
                   <p>
                     <a href={salon.address.mapsUrl} target="_blank" rel="noreferrer">
-                      Open in Maps
+                      Get Directions
                     </a>
                   </p>
                 </div>

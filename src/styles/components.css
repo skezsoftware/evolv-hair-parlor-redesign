@@ -568,9 +568,25 @@
   gap: 0.35rem;
 }
 
+.menu-item__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .menu-item h3 {
   font-size: 1.28rem;
   font-weight: 500;
+}
+
+.menu-item__price {
+  flex-shrink: 0;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--charcoal);
 }
 
 .menu-item p {

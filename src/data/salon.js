@@ -26,11 +26,6 @@ export const salon = {
     href: 'tel:+16192912887',
   },
 
-  email: {
-    display: 'hello@evolvhairparlor.com',
-    href: 'mailto:hello@evolvhairparlor.com',
-  },
-
   hours: [
     { days: 'Monday – Friday', time: '10:00 am – 8:00 pm' },
     { days: 'Saturday – Sunday', time: '10:00 am – 5:00 pm' },
@@ -77,6 +72,11 @@ export const salon = {
         title: 'Client Spotlight',
         description:
           'Client Spotlight at Êvolv Hair Parlor — faces, looks, and stories from our Hillcrest community.',
+      },
+      '/gallery': {
+        title: 'Gallery',
+        description:
+          'Haircut gallery from Êvolv Hair Parlor in Hillcrest — fades, tapers, beards, and finished looks.',
       },
       '/about': {
         title: 'Our Story',
@@ -264,18 +264,21 @@ export const salon = {
       description:
         'From classic fades to longer looks — tailored cuts and finishes for men and women.',
       imageKey: 'cut',
+      to: '/services#cuts',
     },
     {
       name: 'Color & Texture',
       description:
         'Custom color, highlights, and treatments shaped around your hair and the look you want.',
       imageKey: 'color',
+      to: '/services#color',
     },
     {
       name: 'Barbering & Care',
       description:
         'Shaves, lineups, and finishing work — the details that keep every visit sharp.',
       imageKey: 'izzy',
+      to: '/services#barbering',
     },
   ],
 
@@ -313,40 +316,59 @@ export const salon = {
   ],
 
   servicesDisclaimer:
-    'Please contact us with questions about services not listed below. Appointments recommended.',
+    'Prices are approximate starting rates averaged across stylists — your stylist’s Booksy or Instagram listing is the final word. Please contact us with questions about services not listed below. Appointments recommended.',
 
   services: [
     {
       id: 'cuts',
       name: 'Cuts',
-      note: 'All cuts include a consultation, clean finish, and style.',
+      note: 'All cuts include a consultation, clean finish, and style. Military, police, and fire discounts available with select stylists.',
       items: [
         {
-          name: 'Short Haircut',
-          description: 'Precision cut for short lengths, shampoo, and style.',
-          price: 40,
+          name: 'Haircut',
+          description:
+            'Classics, fades, tapers, and precision cuts tailored to your style.',
+          price: 50,
         },
         {
           name: 'Long Haircut',
           description: 'Shape, trim, and finish for longer hair.',
-          price: '45+',
+          price: '55+',
         },
         {
-          name: 'Buzzcut',
+          name: 'Buzz Cut',
           description: 'Even length all around — clean and simple.',
           price: 30,
+        },
+        {
+          name: 'Haircut + Beard',
+          description:
+            'Full haircut paired with beard sculpting or a straight-razor finish.',
+          price: 65,
+        },
+        {
+          name: 'Clean Up',
+          description:
+            'Edge-up around the ears, sideburns, and nape — stay sharp between cuts.',
+          price: 20,
+        },
+        {
+          name: 'Premium Haircut, Shave + Facial',
+          description:
+            'Haircut with hot-towel shave and facial for a full grooming reset.',
+          price: 90,
         },
       ],
     },
     {
       id: 'color',
       name: 'Color',
-      note: 'Color services are customized. Final pricing depends on length and technique.',
+      note: 'Color and chemical services are customized. Final pricing depends on length and technique.',
       items: [
         {
           name: 'Color Service',
           description: 'Single-process and custom color applications.',
-          price: '60+',
+          price: '75+',
         },
         {
           name: 'Highlights',
@@ -354,24 +376,48 @@ export const salon = {
           price: '75+',
         },
         {
+          name: 'Chemical Service',
+          description: 'Texture and chemical services by consultation.',
+          price: '80+',
+        },
+        {
           name: 'Hairshine Treatment',
           description: 'Glossing treatment for shine, softness, and polish.',
           price: 45,
+        },
+        {
+          name: 'Hair Mask Treatment',
+          description:
+            'Deep-cleansing shampoo and moisturizing mask for softness and shine.',
+          price: 25,
         },
       ],
     },
     {
       id: 'barbering',
-      name: 'Barbering',
+      name: 'Barbering & Care',
       items: [
         {
-          name: 'Shave Treatments',
-          description: 'Hot towel shave and finishing treatment.',
+          name: 'Beard Treatment',
+          description:
+            'Beard sculpting, hot towel, and finishing oil for a clean, sharp look.',
           price: 35,
         },
         {
-          name: 'Blowdry',
-          description: 'Wash and blowdry finish.',
+          name: 'Hot Towel Shave',
+          description:
+            'Hot towel shave with essential-oil finish and aftershave.',
+          price: 40,
+        },
+        {
+          name: 'Shampoo & Blow Dry',
+          description: 'Wash and blow-dry finish.',
+          price: 45,
+        },
+        {
+          name: 'Facial',
+          description:
+            'Cleanser, masks, facial massage, and hot towels — a grooming refresh.',
           price: 40,
         },
         {
@@ -405,12 +451,57 @@ export const salon = {
         'A familiar face in the chair at Êvolv — clean fade, confident presence, and the kind of regular who makes Hillcrest feel like home. Proud to feature Joe in this month’s client spotlight.',
     },
   ],
+
+  /**
+   * Haircut gallery — drop photos in public/images/gallery/ and add entries below.
+   * Order is mixed for variety, not chronological.
+   */
+  gallery: [
+    { src: '/images/gallery/12-spiked-textured-cut.webp', alt: 'Spiked textured cut' },
+    { src: '/images/gallery/02-textured-taper.webp', alt: 'Textured taper haircut' },
+    { src: '/images/gallery/18-kids-textured-cut.webp', alt: 'Kids textured cut' },
+    { src: '/images/gallery/06-blonde-pompadour-and-beard.webp', alt: 'Blonde pompadour and beard' },
+    { src: '/images/gallery/04-clean-fade.webp', alt: 'Clean fade' },
+    { src: '/images/gallery/10-modern-comb-over.webp', alt: 'Modern comb over' },
+    { src: '/images/gallery/05-fade-and-beard.webp', alt: 'Fade and beard' },
+    { src: '/images/clients/izzy.jpg', alt: 'Izzy — fade and finish' },
+    { src: '/images/gallery/07-purple-textured-mohawk.webp', alt: 'Purple textured mohawk' },
+    { src: '/images/gallery/15-short-crop-fade.webp', alt: 'Short crop fade' },
+    { src: '/images/gallery/01-classic-side-part-fade.webp', alt: 'Classic side part fade' },
+    { src: '/images/gallery/11-textured-cut-and-beard.webp', alt: 'Textured cut and beard' },
+    { src: '/images/gallery/03-platinum-crop-and-mustache.webp', alt: 'Platinum crop and mustache' },
+    { src: '/images/gallery/20-fade-and-shaped-beard.webp', alt: 'Fade and shaped beard' },
+    { src: '/images/gallery/02-curly-fade-style.webp', alt: 'Curly fade style' },
+    { src: '/images/gallery/08-classic-cut-and-beard.webp', alt: 'Classic cut and beard' },
+    { src: '/images/gallery/01-short-blonde-taper.webp', alt: 'Short blonde taper' },
+    { src: '/images/gallery/10-textured-fade-and-beard.webp', alt: 'Textured fade and beard' },
+    { src: '/images/gallery/06-slick-back-fade.webp', alt: 'Slick back fade' },
+    { src: '/images/gallery/14-slicked-back-cut-and-beard.webp', alt: 'Slicked back cut and beard' },
+    { src: '/images/gallery/09-beard-lineup-profile.webp', alt: 'Beard lineup in profile' },
+    { src: '/images/gallery/03-curly-fade-and-beard.webp', alt: 'Curly fade and beard' },
+    { src: '/images/gallery/04-pompadour-fade.webp', alt: 'Pompadour fade' },
+    { src: '/images/gallery/17-close-cropped-fade.webp', alt: 'Close cropped fade' },
+    { src: '/images/gallery/07-blonde-fade-and-beard.webp', alt: 'Blonde fade and beard' },
+    { src: '/images/gallery/05-short-undercut.webp', alt: 'Short undercut' },
+    { src: '/images/gallery/13-short-fade-and-beard.webp', alt: 'Short fade and beard' },
+    { src: '/images/gallery/01-barber-at-work-closeup.webp', alt: 'Barber at work close-up' },
+    { src: '/images/gallery/02-textured-short-cut.webp', alt: 'Textured short cut' },
+    { src: '/images/gallery/08-dark-fade-and-beard.webp', alt: 'Dark fade and beard' },
+    { src: '/images/gallery/19-classic-side-part.webp', alt: 'Classic side part' },
+    { src: '/images/gallery/07-textured-fade.webp', alt: 'Textured fade' },
+    { src: '/images/gallery/03-classic-short-cut.webp', alt: 'Classic short cut' },
+    { src: '/images/gallery/16-short-undercut-style.webp', alt: 'Short undercut style' },
+    { src: '/images/gallery/05-barber-at-work-wide.webp', alt: 'Barber at work' },
+    { src: '/images/gallery/09-classic-cut-and-beard-angle.webp', alt: 'Classic cut and beard angle' },
+    { src: '/images/gallery/04-slick-side-part.webp', alt: 'Slick side part' },
+  ],
 }
 
 export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'Team', path: '/team' },
+  { label: 'Gallery', path: '/gallery' },
   { label: 'Spotlight', path: '/spotlight' },
   { label: 'Our Story', path: '/about' },
   { label: 'Contact', path: '/contact' },

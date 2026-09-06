@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Team from './pages/Team'
+import Gallery from './pages/Gallery'
 import Spotlight from './pages/Spotlight'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/spotlight" element={<Spotlight />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

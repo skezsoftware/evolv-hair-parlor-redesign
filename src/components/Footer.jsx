@@ -31,6 +31,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href={salon.address.mapsUrl} target="_blank" rel="noreferrer">
+                Get Directions
+              </a>
+            </li>
+            <li>
               <a href={salon.phone.href}>{salon.phone.display}</a>
             </li>
           </ul>

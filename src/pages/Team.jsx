@@ -9,22 +9,39 @@ export default function Team() {
 
   return (
     <>
-      <section className="team-hero">
+      <section className="section team-intro">
+        <div className="container">
+          <SectionHeading
+            align="center"
+            eyebrow="The Team"
+            title="Meet the Êvolv team."
+            subtitle="Barbers, stylists, and educators dedicated to the craft — for men and women. Book your appointment today."
+          />
+          <div className="booking-note">
+            <p className="eyebrow">How to book</p>
+            <ol className="booking-note__steps">
+              <li>Choose a stylist below.</li>
+              <li>
+                Book on Booksy or Instagram when you see a link — or call them
+                directly.
+              </li>
+              <li>
+                Prefer help picking? Call the parlor at{' '}
+                <a href={salon.phone.href}>{salon.phone.display}</a>.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="team-hero" aria-label="Êvolv Hair Parlor team">
         <div className="team-hero__frame">
-          <div className="team-hero__media" aria-hidden="true">
+          <div className="team-hero__media">
             <SafeImage
               src={salon.images.teamGroup}
-              alt=""
+              alt="The Êvolv Hair Parlor team"
               priority
             />
-          </div>
-          <div className="container team-hero__content">
-            <p className="eyebrow team-hero__eyebrow">The Team</p>
-            <h1>Style starts here.</h1>
-            <p>
-              Barbers, stylists, and educators dedicated to the craft — for men
-              and women. Book your appointment today.
-            </p>
           </div>
         </div>
       </section>
@@ -34,8 +51,8 @@ export default function Team() {
           <SectionHeading
             align="center"
             eyebrow="Stylists"
-            title="Meet the Êvolv team."
-            subtitle="Find your stylist below — or call the parlor and we’ll help you book."
+            title="Find your stylist."
+            subtitle="Book directly below — or call the parlor and we’ll help match you."
           />
           <div className="team-grid">
             {salon.team.map((member) => (

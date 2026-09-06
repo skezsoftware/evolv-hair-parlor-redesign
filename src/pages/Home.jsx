@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { getImage, salon } from '../data/salon'
 import { usePageTitle } from '../hooks/usePageTitle'
 import Button from '../components/Button'
@@ -68,13 +69,17 @@ export default function Home() {
           />
           <div className="featured-grid">
             {salon.featuredServices.map((item) => (
-              <article className="featured-card" key={item.name}>
-                <SafeImage src={getImage(item.imageKey)} alt={item.name} hover />
+              <Link
+                className="featured-card"
+                key={item.name}
+                to={item.to}
+              >
+                <SafeImage src={getImage(item.imageKey)} alt="" hover />
                 <div>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
           <div className="btn-group" style={{ justifyContent: 'center', marginTop: '2.5rem' }}>
