@@ -1,6 +1,3 @@
-const unsplash = (id, width = 1600) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`
-
 export const salon = {
   name: 'Êvolv Hair Parlor',
   shortName: 'Êvolv',
@@ -38,8 +35,6 @@ export const salon = {
       href: 'https://www.yelp.com/biz/%C3%AAvolv-hair-parlor-san-diego',
     },
   ],
-
-  bookingUrl: 'tel:+16192912887',
 
   primaryCta: {
     label: 'Book Now',
@@ -101,7 +96,6 @@ export const salon = {
 
   images: {
     hero: '/images/salon/interior-front.jpg',
-    salonInterior: '',
     chair: '/images/salon/lounge-seating-area.webp',
     storyTools: '/images/salon/story_image.jpg',
     cut: '/images/salon/barber-at-work.jpg',

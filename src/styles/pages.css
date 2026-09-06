@@ -117,16 +117,14 @@
 .split,
 .hours-grid,
 .contact-layout,
-.chef-grid,
-.spaces-grid,
-.events-grid {
+.founder-grid {
   display: grid;
   gap: 3.5rem;
 }
 
 .intro-grid,
 .split,
-.chef-grid,
+.founder-grid,
 .hours-grid,
 .contact-layout {
   grid-template-columns: 1fr 1fr;
@@ -144,7 +142,7 @@
 
 .intro-media,
 .split-media,
-.chef-media {
+.founder-media {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -157,7 +155,7 @@
 
 .intro-media .safe-image,
 .split-media .safe-image,
-.chef-media .safe-image {
+.founder-media .safe-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -231,7 +229,7 @@
   color: var(--olive);
 }
 
-.private-promo {
+.team-promo {
   position: relative;
   min-height: 34rem;
   display: grid;
@@ -239,14 +237,14 @@
   color: var(--ivory);
 }
 
-.private-promo .safe-image {
+.team-promo .safe-image {
   position: absolute;
   inset: 0;
   height: 100%;
   z-index: 0;
 }
 
-.private-promo::after {
+.team-promo::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -254,25 +252,25 @@
   background: var(--overlay);
 }
 
-.private-promo__content {
+.team-promo__content {
   position: relative;
   z-index: 2;
   max-width: 38rem;
   padding: 6rem 0;
 }
 
-.private-promo h2,
-.private-promo .eyebrow {
+.team-promo h2,
+.team-promo .eyebrow {
   color: var(--ivory);
 }
 
-.private-promo .eyebrow {
+.team-promo .eyebrow {
   color: var(--gold-soft);
 }
 
-.private-promo p {
-  margin: 1.1rem 0 1.8rem;
-  color: rgba(244, 239, 230, 0.88);
+.team-promo p {
+  margin: 1rem 0 1.75rem;
+  color: rgba(244, 239, 230, 0.86);
 }
 
 .testimonials {
@@ -428,57 +426,6 @@
 
 .philosophy-card p {
   color: var(--text-muted);
-}
-
-.about-gallery {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 1rem;
-}
-
-.about-gallery .safe-image {
-  min-height: 22rem;
-  height: 100%;
-}
-
-/* Private dining */
-.events-grid,
-.spaces-grid {
-  grid-template-columns: repeat(3, 1fr);
-  align-items: start;
-  margin-top: 3rem;
-}
-
-.event-card .safe-image,
-.space-card .safe-image {
-  height: 16rem;
-  margin-bottom: 1.2rem;
-}
-
-.event-card h3,
-.space-card h3 {
-  font-size: 1.7rem;
-}
-
-.event-card p,
-.space-card p {
-  margin-top: 0.6rem;
-  color: var(--text-muted);
-}
-
-.space-card__meta {
-  margin-top: 0.35rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--olive);
-}
-
-.inquiry {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 3.5rem;
-  align-items: start;
 }
 
 .notes {
@@ -877,16 +824,12 @@
 @media (max-width: 960px) {
   .intro-grid,
   .split,
-  .chef-grid,
+  .founder-grid,
   .hours-grid,
   .contact-layout,
-  .inquiry,
-  .about-gallery,
   .featured-grid,
   .testimonials,
   .philosophy-grid,
-  .events-grid,
-  .spaces-grid,
   .team-grid,
   .spotlight-feature,
   .spotlight-archive__item,
@@ -918,22 +861,20 @@
 
   .intro-media,
   .split-media,
-  .chef-media {
+  .founder-media {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
 
   .intro-media .safe-image,
   .split-media .safe-image,
-  .chef-media .safe-image {
+  .founder-media .safe-image {
     min-height: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .featured-card .safe-image,
-  .event-card .safe-image,
-  .space-card .safe-image {
+  .featured-card .safe-image {
     height: 16rem;
   }
 

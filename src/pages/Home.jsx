@@ -120,9 +120,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="private-promo">
+      <section className="team-promo">
         <SafeImage src={salon.images.teamAtWork} alt="" />
-        <div className="container private-promo__content">
+        <div className="container team-promo__content">
           <p className="eyebrow">The Team</p>
           <h2>Style starts here.</h2>
           <p>

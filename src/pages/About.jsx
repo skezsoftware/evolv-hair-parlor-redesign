@@ -45,8 +45,8 @@ export default function About() {
       </div>
 
       <section className="section">
-        <div className="container chef-grid">
-          <div className="chef-media">
+        <div className="container founder-grid">
+          <div className="founder-media">
             <SafeImage
               src={getImage(founder.imageKey)}
               alt={founder.name}

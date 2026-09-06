@@ -25,7 +25,6 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/menu" element={<Navigate to="/services" replace />} />
           <Route path="/book" element={<Navigate to="/team" replace />} />
-          <Route path="/private-dining" element={<Navigate to="/team" replace />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
