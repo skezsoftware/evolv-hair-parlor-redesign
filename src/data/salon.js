@@ -51,6 +51,46 @@ export const salon = {
     to: '/team',
   },
 
+  /** Production site URL — update when a custom domain is connected */
+  siteUrl: 'https://evolv-hair-parlor-redesign.vercel.app',
+
+  seo: {
+    defaultDescription:
+      'Êvolv Hair Parlor — a hybrid salon in Hillcrest, San Diego. Sophisticated cuts, color, and barbering for men and women. More good hair days.',
+    ogImage: '/images/salon/storefront.jpg',
+    pages: {
+      '/': {
+        description:
+          'Êvolv Hair Parlor in Hillcrest, San Diego — hybrid salon cuts, color, and barbering for men and women. More good hair days.',
+      },
+      '/services': {
+        title: 'Services',
+        description:
+          'Explore cuts, color, and barbering at Êvolv Hair Parlor in Hillcrest. Call or book with your stylist for the look you want.',
+      },
+      '/team': {
+        title: 'Team',
+        description:
+          'Meet the Êvolv Hair Parlor team — barbers, stylists, and educators in Hillcrest. Book your appointment today.',
+      },
+      '/spotlight': {
+        title: 'Client Spotlight',
+        description:
+          'Client Spotlight at Êvolv Hair Parlor — faces, looks, and stories from our Hillcrest community.',
+      },
+      '/about': {
+        title: 'Our Story',
+        description:
+          'The story of Êvolv Hair Parlor — founder Mario Garcia and a hybrid salon built on craft in Hillcrest since 2016.',
+      },
+      '/contact': {
+        title: 'Contact',
+        description:
+          'Visit Êvolv Hair Parlor at 409 University Ave in Hillcrest, San Diego. Call (619) 291-2887 to book.',
+      },
+    },
+  },
+
   colors: {
     ivory: '#f6f5f3',
     charcoal: '#121212',
