@@ -34,19 +34,7 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="team-hero" aria-label="Êvolv Hair Parlor team">
-        <div className="team-hero__frame">
-          <div className="team-hero__media">
-            <SafeImage
-              src={salon.images.teamGroup}
-              alt="The Êvolv Hair Parlor team"
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section team-stylists">
         <div className="container">
           <SectionHeading
             align="center"
@@ -96,6 +84,17 @@ export default function Team() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="team-hero" aria-label="Êvolv Hair Parlor team">
+        <div className="team-hero__frame">
+          <div className="team-hero__media">
+            <SafeImage
+              src={salon.images.teamGroup}
+              alt="The Êvolv Hair Parlor team"
+            />
           </div>
         </div>
       </section>

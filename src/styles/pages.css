@@ -567,14 +567,18 @@
   border-color: var(--gold);
 }
 
-/* Team intro — copy first, then group photo, then stylists */
+/* Team intro — copy first, then stylists, then group photo */
 .team-intro {
-  padding-top: calc(var(--nav-height) + clamp(2.5rem, 5vw, 4rem));
-  padding-bottom: clamp(2rem, 4vw, 3rem);
+  padding-top: calc(var(--nav-height) + clamp(1.5rem, 3vw, 2.25rem));
+  padding-bottom: 0;
 }
 
 .team-intro .booking-note {
   margin-top: 1.75rem;
+}
+
+.team-stylists {
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 /* Team photo band — framed on desktop; full group visible */
